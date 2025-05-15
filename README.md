@@ -46,16 +46,16 @@
    npm install
    ```
 
-3. Run the development server:
-
-   ```bash
-   npm run dev
-   ```
-
-4. Build the project:
+3.  Build the project:
 
    ```bash
    npm run build
+   ```
+
+4. Run the development server:
+
+   ```bash
+   npm run dev
    ```
 
 5. Access the app at `http://localhost:3000`.
@@ -179,16 +179,16 @@ This is a test subtitle.
    npm install
    ```
 
-3. سرور توسعه را اجرا کنید:
-
-   ```bash
-   npm run dev
-   ```
-
-4. پروژه را بیلد کنید:
+3. پروژه را بیلد کنید:
 
    ```bash
    npm run build
+   ```
+
+4. سرور توسعه را اجرا کنید:
+
+   ```bash
+   npm run dev
    ```
 
 5. به آدرس `http://localhost:3000` در مرورگر بروید.
