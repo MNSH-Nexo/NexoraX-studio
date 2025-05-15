@@ -46,7 +46,7 @@
    npm install
    ```
 
-3.  Build the project:
+3. Build the project:
 
    ```bash
    npm run build
