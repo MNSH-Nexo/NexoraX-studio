@@ -1,0 +1,269 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ریست پایه */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Vazirmatn', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* تنظیم جهت متن بر اساس زبان */
+html {
+  direction: rtl; /* پیش‌فرض برای فارسی */
+}
+
+html[lang="en"] {
+  direction: ltr; /* برای زبان انگلیسی */
+}
+
+/* متغیرهای تم (فقط تم روشن) */
+:root {
+  --bg-primary: #f9fafb;
+  --bg-secondary: #e0e7ff;
+  --text-primary: #1e293b;
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --input-bg: #ffffff;
+  --gray-bg: #f3f4f6;
+  --gray-text: #6b7280;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* استایل‌های پایه */
+body {
+  background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+
+/* استایل اسکرول‌بار */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  50% {
+    transform: scale(1.05) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* کلاس‌های انیمیشن */
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.bounce-in {
+  animation: bounceIn 0.7s ease-out forwards;
+}
+
+.slide-down {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+.pulse {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* استایل‌های عمومی */
+input,
+textarea {
+  transition: all 0.4s ease;
+  background-color: var(--input-bg);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+input:focus,
+textarea:focus {
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.3);
+}
+
+button {
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px var(--shadow-color);
+}
+
+/* سایه متن */
+.text-shadow {
+  text-shadow: 1px 1px 4px var(--shadow-color);
+}
+
+/* کارت‌ها */
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: visible;
+  z-index: 10;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px var(--shadow-color);
+}
+
+/* دکمه‌های گرادیانت */
+.gradient-button {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  color: white;
+}
+
+.gradient-button:hover {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+}
+
+/* استایل‌های متنی */
+.text-gray-500 {
+  color: var(--gray-text);
+}
+
+.bg-gray-50 {
+  background-color: var(--gray-bg);
+}
+
+.border-gray-200 {
+  border-color: var(--border-color);
+}
+
+/* اطمینان از اینکه section‌ها مشکلی برای دراپ‌داون ایجاد نکنن */
+section {
+  position: relative;
+  overflow: visible;
+  z-index: 0;
+}
+
+/* تنظیمات اضافی برای لایه‌بندی */
+.main-container {
+  position: relative;
+  z-index: 1;
+}
+
+.dropdown-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2999;
+  display: none;
+}
+
+.dropdown-overlay.active {
+  display: block;
+}
+
+/* استایل برای کادر پشتیبانی */
+.contact-support-container {
+  width: 95%;
+  min-width: 300px;
+  max-width: 384px;
+  max-height: 400px;
+  position: absolute;
+  bottom: 6rem;
+  right: 0;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slide-down 0.3s ease-out;
+  overflow-y: auto;
+}
+
+/* تنظیم textarea داخل کادر */
+.contact-support-container textarea {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+/* استایل برای دسکتاپ (بزرگ‌تر از 768px) */
+@media (min-width: 768px) {
+  .contact-support-container {
+    width: 384px;
+    max-width: none;
+    max-height: 450px;
+  }
+}
